@@ -1,0 +1,110 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
+import Testimonial from "../components/Testimonial.astro";
+
+// Sample testimonial data
+const testimonialData = [
+  {
+    name: "Naomi Pryzant",
+    text: "I’ve been getting my hair cut by Kasey for a few years now and she really is a curly hair expert. I trust her wholeheartedly with my hair.",
+    image: "naomi.png",
+    rating: 5,
+    date: "April 18, 2024",
+  },
+  {
+    name: "Charla Custis",
+    text: "Kasey has been my exclusive hair stylist for over 5 years. When you find someone who gets you then you stick with them. I am always 100% satisfied with my haircuts and highlights. She does a great job covering the gray and I always feel like a new woman every time I step away from her chair.",
+    image: "charla.png",
+    rating: 5,
+    date: "May 6, 2024",
+  },
+  {
+    name: "Christina Katzerman",
+    text: "Kasey has been doing my hair for over a year now and I’ve never received as many compliments on my hair as I do now! I love getting my hair done by her and I definitely recommend going to her!",
+    image: "christina.png",
+    rating: 5,
+    date: "March 21, 2024",
+  },
+];
+---
+
+<Layout />
+<Nav />
+<main>
+  <div class="split-wrapper">
+    <div class="image-wrapper">
+      <img src="kasey.jpg" alt="Image 1" />
+    </div>
+    <div class="text-wrapper">
+      <p>
+        Located in historic downtown Colorado Springs, MYSTIC MANES offers big
+        city experience in a relaxed salon. Kasey Esclavon is a master of her
+        craft—with specialized areas of expertise—and educates every client on
+        how to maintain their look at home. She delivers consisten results and
+        personalized service in a welcoming atmosphere.
+      </p>
+    </div>
+  </div>
+  <Testimonial testimonials={testimonialData} />
+</main>
+
+<Footer />
+
+<style>
+  main {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100vh; /* Ensures full viewport height */
+    margin-top: 8rem;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .split-wrapper {
+    max-width: 1080px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    margin: 0 auto;
+    margin-bottom: 5%;
+  }
+
+  .text-wrapper {
+    max-width: 50%;
+    font-size: clamp(1rem, 2.2vw, 1.3rem);
+  }
+
+  .image-wrapper {
+    max-width: 50%;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  }
+
+  @media (max-width: 767px) {
+    .split-wrapper {
+      flex-direction: column;
+      gap: 1rem;
+      padding: 1rem;
+    }
+
+    .text-wrapper {
+      max-width: 100%;
+      text-align: center;
+    }
+
+    .image-wrapper {
+      max-width: 100%;
+    }
+  }
+</style>

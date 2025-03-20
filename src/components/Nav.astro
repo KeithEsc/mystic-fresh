@@ -1,0 +1,326 @@
+---
+// Nav.astro
+// Import any necessary components or dependencies
+import { Image } from "astro:assets";
+---
+
+<nav class="navbar">
+  <div class="navbar-container">
+    <!-- Instagram logo on the left -->
+    <a
+      href="https://www.instagram.com/mysticmanesbeauty/"
+      class="instagram-link"
+      aria-label="Instagram"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="instagram-icon"
+      >
+        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+      </svg>
+    </a>
+
+    <!-- Logo in the middle -->
+    <div class="logo-container">
+      <a href="/" aria-label="Home">
+        <!-- Replace with your actual logo image or SVG -->
+        <img src="MysticManesSig.png" alt="Site Logo" />
+      </a>
+    </div>
+
+    <!-- Hamburger menu on the right -->
+    <button
+      id="hamburger-menu"
+      class="hamburger-menu"
+      aria-label="Menu"
+      aria-expanded="false"
+      aria-controls="nav-menu"
+    >
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+    </button>
+  </div>
+
+  <!-- Navigation menu (hidden by default) -->
+  <div id="nav-menu" class="nav-menu">
+    <div class="nav-menu-content">
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+        <li><a href="https://www.vagaro.com/mysticmanesbeauty">Book</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Overlay for clicking outside to close menu -->
+  <div id="menu-overlay" class="menu-overlay"></div>
+</nav>
+
+<script>
+  // JavaScript to toggle the menu
+  document.addEventListener("DOMContentLoaded", () => {
+    const hamburgerMenu = document.getElementById("hamburger-menu");
+    const navMenu = document.getElementById("nav-menu");
+    const menuOverlay = document.getElementById("menu-overlay");
+    const logoContainer = document.querySelector(".logo-container");
+
+    hamburgerMenu.addEventListener("click", () => {
+      navMenu.classList.toggle("active");
+      logoContainer.classList.toggle("white-logo");
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener("click", (event) => {
+      if (
+        !navMenu.contains(event.target) &&
+        !hamburgerMenu.contains(event.target)
+      ) {
+        navMenu.classList.remove("active");
+        logoContainer.classList.remove("white-logo"); // Ensure logo resets
+      }
+    });
+
+    // Function to open menu
+    const openMenu = () => {
+      hamburgerMenu?.setAttribute("aria-expanded", "true");
+      navMenu?.classList.add("active");
+      menuOverlay?.classList.add("active");
+      document.querySelector(".instagram-icon")?.classList.add("white-icon");
+      document.body.style.overflow = "hidden"; // Prevent scrolling when menu is open
+    };
+
+    // Function to close menu
+    const closeMenu = () => {
+      hamburgerMenu?.setAttribute("aria-expanded", "false");
+      navMenu?.classList.remove("active");
+      menuOverlay?.classList.remove("active");
+      document.querySelector(".instagram-icon")?.classList.remove("white-icon");
+      document.body.style.overflow = ""; // Restore scrolling
+    };
+
+    // Toggle menu when hamburger is clicked
+    hamburgerMenu?.addEventListener("click", () => {
+      const expanded = hamburgerMenu.getAttribute("aria-expanded") === "true";
+      if (expanded) {
+        closeMenu();
+      } else {
+        openMenu();
+      }
+    });
+
+    // Close menu when clicking outside
+    menuOverlay?.addEventListener("click", closeMenu);
+
+    // Close menu when pressing Escape key
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && navMenu?.classList.contains("active")) {
+        closeMenu();
+      }
+    });
+  });
+</script>
+
+<style>
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  img,
+  picture,
+  video,
+  canvas,
+  svg {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+  nav {
+    padding: 1rem;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+  }
+
+  .navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .instagram-link {
+    color: #333;
+    transition: color 0.3s ease;
+    z-index: 1001; /* Keep above the overlay */
+  }
+
+  .instagram-link:hover {
+    color: #e1306c;
+  }
+
+  .logo-container {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1001; /* Keep above the overlay */
+    max-width: clamp(100px, 50%, 200px);
+  }
+
+  .hamburger-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 24px;
+    height: 18px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1001; /* Keep above the overlay */
+  }
+
+  .hamburger-line {
+    width: 100%;
+    height: 2px;
+    background-color: #000000;
+    transition: all 0.3s ease;
+  }
+
+  .hamburger-menu[aria-expanded="true"] .hamburger-line:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+    background-color: white;
+  }
+
+  .hamburger-menu[aria-expanded="true"] .hamburger-line:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger-menu[aria-expanded="true"] .hamburger-line:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+    background-color: white;
+  }
+
+  .white-icon {
+    stroke: white !important;
+    opacity: 0;
+  }
+  /* Menu overlay for clicking outside */
+  .menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 990;
+    display: none;
+  }
+
+  .menu-overlay.active {
+    display: block;
+  }
+
+  /* Navigation menu styling */
+  .nav-menu {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background-color: #000000;
+    overflow: hidden;
+    transition: height 0.3s ease;
+    z-index: 1000;
+    justify-content: center;
+    align-items: flex-end;
+  }
+
+  .nav-menu.active {
+    display: flex;
+  }
+
+  .white-logo img {
+    content: url("/logo-white.png"); /* Absolute path from root */
+  }
+
+  .nav-menu-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+
+    width: 100%;
+  }
+
+  .nav-links {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    gap: clamp(0.5rem, 5vw, 3rem);
+    align-content: center;
+  }
+
+  .nav-links li {
+    margin-bottom: 1rem;
+  }
+
+  .nav-links a {
+    display: block;
+    color: #ffffff;
+    opacity: 0.6;
+    text-decoration: none;
+    font-size: 2.2rem;
+    transition: color 0.3s ease;
+  }
+
+  .nav-links a:hover {
+    opacity: 1;
+  }
+
+  /* Mobile styles (full height menu) */
+  @media (max-width: 767px) {
+    .nav-menu.active {
+      height: 100vh;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .nav-links {
+      height: 80%;
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+
+  /* Tablet styles (same as desktop) */
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .nav-menu.active {
+      height: 25vh;
+    }
+  }
+
+  /* Desktop styles (25% viewport height) */
+  @media (min-width: 1024px) {
+    .nav-menu.active {
+      height: 25vh;
+    }
+  }
+</style>

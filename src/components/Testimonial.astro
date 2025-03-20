@@ -1,0 +1,406 @@
+---
+// Testimonial.astro
+// You can define props to make the component customizable
+interface Testimonial {
+  name: string;
+  text: string;
+  image?: string;
+  rating?: number;
+  date?: string;
+}
+
+interface Props {
+  testimonials: Testimonial[];
+  title?: string;
+  subtitle?: string;
+}
+
+const {
+  testimonials,
+  title = "What My Clients Say",
+  subtitle = "Check out what my clients have to say about their experience.",
+} = Astro.props;
+
+// Helper function to generate star ratings
+function generateStars(rating: number) {
+  let stars = "";
+  for (let i = 0; i < 5; i++) {
+    if (i < rating) {
+      stars += "★"; // Filled star
+    } else {
+      stars += "☆"; // Empty star
+    }
+  }
+  return stars;
+}
+---
+
+<section class="testimonials-section">
+  <div class="testimonials-container">
+    <div class="testimonials-header">
+      <h2>{title}</h2>
+      <p>{subtitle}</p>
+    </div>
+
+    <div class="testimonials-wrapper">
+      <div class="testimonials-slider" id="testimonialsSlider">
+        {
+          testimonials.map((testimonial) => (
+            <div class="testimonial-card">
+              {testimonial.image && (
+                <div class="testimonial-image">
+                  <img
+                    src={testimonial.image}
+                    alt={`${testimonial.name}'s photo`}
+                  />
+                </div>
+              )}
+              <div class="testimonial-content">
+                <p class="testimonial-text">{testimonial.text}</p>
+                {testimonial.rating && (
+                  <div class="testimonial-rating">
+                    <span>{generateStars(testimonial.rating)}</span>
+                  </div>
+                )}
+                <div class="testimonial-author">
+                  <h4>{testimonial.name}</h4>
+                  {testimonial.date && (
+                    <span class="testimonial-date">{testimonial.date}</span>
+                  )}
+                </div>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+
+    <div class="testimonials-navigation">
+      <button class="prev-btn" id="prevBtn">❮</button>
+      <div class="testimonials-dots" id="testimonialDots"></div>
+      <button class="next-btn" id="nextBtn">❯</button>
+    </div>
+  </div>
+</section>
+
+<style>
+  .testimonials-section {
+    padding: 2rem 2rem;
+    max-width: 100%;
+  }
+
+  .testimonials-container {
+    max-width: 50rem;
+    margin: 0 auto;
+  }
+
+  .testimonials-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-family: Poppins, sans-serif;
+  }
+
+  .testimonials-header h2 {
+    font-size: 2rem;
+    color: #121212;
+    margin: 0;
+    line-height: 1.2;
+  }
+
+  .testimonials-header p {
+    font-size: 1.1rem;
+    color: #666;
+  }
+
+  .testimonials-wrapper {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+  }
+
+  .testimonials-slider {
+    display: flex;
+    position: relative;
+    width: 100%;
+    transition: transform 0.4s ease;
+  }
+
+  .testimonial-card {
+    flex: 0 0 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem; /* Use a single padding property for consistency */
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    margin: 0;
+    box-sizing: border-box;
+    width: 100%;
+  }
+
+  .testimonial-content {
+    flex: 1; /* Ensure the content takes up available space */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center the content vertically */
+    text-align: center;
+  }
+
+  @media (min-width: 768px) {
+    .testimonial-card {
+      flex-direction: row;
+      gap: 2rem;
+    }
+
+    .testimonial-content {
+      text-align: left;
+    }
+  }
+
+  .testimonial-image {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    overflow: hidden;
+
+    flex-shrink: 0;
+  }
+
+  @media (min-width: 768px) {
+    .testimonial-image {
+      margin-bottom: 0;
+    }
+  }
+
+  .testimonial-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .testimonial-text {
+    font-size: 1.1rem;
+    line-height: 1.4;
+    color: #444;
+    margin-bottom: 1rem;
+    font-style: italic;
+    position: relative;
+  }
+
+  .testimonial-text p {
+    margin: 0 0 0.75rem 0; /* Consistent bottom margin */
+    line-height: 1.5; /* Consistent line height */
+  }
+
+  .testimonial-text p:last-child {
+    margin-bottom: 0; /* Remove margin from last paragraph */
+  }
+
+  .testimonial-text * {
+    line-height: 1.5;
+    margin-top: 0;
+  }
+
+  .testimonial-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem; /* Consistent spacing between paragraphs */
+  }
+
+  .testimonial-rating {
+    font-size: 1.2rem;
+    color: #d4af37; /* Gold color for stars */
+  }
+
+  .testimonial-author h4 {
+    font-size: 1.2rem;
+    color: #121212;
+    margin: 0;
+  }
+
+  .testimonial-date {
+    font-size: 0.9rem;
+    color: #777;
+  }
+
+  .testimonials-navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    gap: 1rem;
+  }
+
+  .prev-btn,
+  .next-btn {
+    background-color: #121212;
+    color: rgb(173, 216, 171);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .prev-btn:hover,
+  .next-btn:hover {
+    background-color: #b8941e;
+  }
+
+  .testimonials-dots {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #ddd;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .dot.active {
+    background-color: #d4af37;
+  }
+</style>
+
+<script>
+  // This script adds functionality to the testimonial slider
+  document.addEventListener("DOMContentLoaded", () => {
+    const slider = document.getElementById("testimonialsSlider");
+    const prevBtn = document.getElementById("prevBtn");
+    const nextBtn = document.getElementById("nextBtn");
+    const dotsContainer = document.getElementById("testimonialDots");
+
+    if (!slider || !prevBtn || !nextBtn || !dotsContainer) return;
+
+    const cards = Array.from(slider.querySelectorAll(".testimonial-card"));
+    let currentIndex = 0;
+
+    // Create dots based on number of testimonials
+    cards.forEach((_, index) => {
+      const dot = document.createElement("div");
+      dot.classList.add("dot");
+      if (index === 0) dot.classList.add("active");
+      dot.addEventListener("click", () => goToSlide(index));
+      dotsContainer.appendChild(dot);
+    });
+
+    // Set initial position
+    updateSliderPosition();
+
+    // Update dots to show current active slide
+    function updateDots() {
+      const dots = dotsContainer ? dotsContainer.querySelectorAll(".dot") : [];
+      dots.forEach((dot, index) => {
+        if (index === currentIndex) {
+          dot.classList.add("active");
+        } else {
+          dot.classList.remove("active");
+        }
+      });
+    }
+
+    // Update the slider position based on currentIndex
+    function updateSliderPosition() {
+      if (slider) {
+        slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+      }
+    }
+
+    // Go to a specific slide
+    function goToSlide(index: number) {
+      currentIndex = index;
+      updateSliderPosition();
+      updateDots();
+    }
+
+    // Previous slide
+    prevBtn.addEventListener("click", () => {
+      if (currentIndex > 0) {
+        goToSlide(currentIndex - 1);
+      } else {
+        // Loop to the last slide
+        goToSlide(cards.length - 1);
+      }
+    });
+
+    // Next slide
+    nextBtn.addEventListener("click", () => {
+      if (currentIndex < cards.length - 1) {
+        goToSlide(currentIndex + 1);
+      } else {
+        // Loop to the first slide
+        goToSlide(0);
+      }
+    });
+
+    // Add keyboard navigation
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowLeft") {
+        if (prevBtn) prevBtn.click();
+      } else if (e.key === "ArrowRight") {
+        if (nextBtn) nextBtn.click();
+      }
+    });
+
+    // Handle window resize to ensure proper positioning
+    window.addEventListener("resize", updateSliderPosition);
+
+    // Optional: Touch support for mobile
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    slider.addEventListener("touchstart", (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    });
+
+    slider.addEventListener("touchend", (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      handleSwipe();
+    });
+
+    function handleSwipe() {
+      const swipeThreshold = 50;
+      if (touchEndX < touchStartX - swipeThreshold) {
+        // Swipe left - next slide
+        if (nextBtn) nextBtn.click();
+      } else if (touchEndX > touchStartX + swipeThreshold) {
+        // Swipe right - previous slide
+        if (prevBtn) prevBtn.click();
+      }
+    }
+
+    // Auto-play functionality (optional)
+    // Uncomment this section if you want auto-scrolling
+    /*
+    let autoplayInterval;
+    
+    function startAutoplay() {
+      autoplayInterval = setInterval(() => {
+        if (currentIndex < cards.length - 1) {
+          goToSlide(currentIndex + 1);
+        } else {
+          goToSlide(0);
+        }
+      }, 5000); // Change slide every 5 seconds
+    }
+    
+    function stopAutoplay() {
+      clearInterval(autoplayInterval);
+    }
+    
+    // Start autoplay
+    startAutoplay();
+    
+    // Pause autoplay on hover
+    slider.parentElement.addEventListener('mouseenter', stopAutoplay);
+    slider.parentElement.addEventListener('mouseleave', startAutoplay);
+    */
+  });
+</script>

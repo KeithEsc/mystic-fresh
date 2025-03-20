@@ -1,0 +1,120 @@
+<footer>
+  <div class="footer-wrapper">
+    <div class="col-one">
+      <img class="footer-logo" src="logo-white.png" alt="Logo" />
+    </div>
+    <div class="col-two">
+      <div class="times-container">
+        <ul class="times-days">
+          <li>MON</li>
+          <li>TUE</li>
+          <li>WED</li>
+          <li>THR</li>
+          <li>FRI</li>
+          <li>SAT</li>
+          <li>SUN</li>
+        </ul>
+        <ul class="times-hours">
+          <li>CLOSED</li>
+          <li>9 AM — 7 PM</li>
+          <li>9 AM — 7 PM</li>
+          <li>9 AM — 7 PM</li>
+          <li>CLOSED</li>
+          <li>CLOSED</li>
+          <li>CLOSED</li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-three">
+      <p>
+        Parking is available behind the salon. Additional street parking is
+        meter-free for two hours.
+      </p>
+    </div>
+    <div class="col-four">
+      <p>708 S Tejon St<br /> Colorado Springs, CO 80903</p>
+      <p>(719) 645-5650<br /> mysticmanesbeauty@gmail.com</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  footer {
+    background-color: rgb(0, 0, 0);
+    bottom: 0;
+    width: 100%;
+    font-family: "Poppins", sans-serif;
+    font-size: 0.85rem;
+    padding-top: 1rem;
+    padding-bottom: 0.5rem;
+  }
+
+  p {
+    padding: 0;
+    margin: 0;
+    margin-bottom: 1rem;
+  }
+
+  .footer-wrapper {
+    place-self: center;
+    display: flex;
+    justify-content: space-between;
+    margin-block: 1rem;
+    color: white;
+    max-width: 60rem;
+    gap: 5rem;
+  }
+
+  .footer-logo {
+    max-width: 10rem;
+  }
+
+  .col-two .times-container {
+    display: flex;
+  }
+
+  .col-two ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 5rem; /* Adjust the width of the lists as needed */
+  }
+
+  .times-hours {
+    min-width: 8rem; /* Adjust the width of the lists as needed */
+  }
+
+  .col-two li {
+    margin-bottom: 0.5rem; /* Adjust the spacing between list items as needed */
+  }
+
+  .col-three p {
+    padding: 0;
+    margin: 0;
+  }
+
+  @media screen and (max-width: 970px) {
+    .footer-wrapper {
+      flex-direction: column;
+      gap: 2rem;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .col-two .times-container {
+      flex-direction: row;
+      gap: 3rem;
+      text-align: center;
+    }
+
+    .col-three {
+      max-width: 10rem;
+      text-align: center;
+    }
+
+    .col-four {
+      text-align: center;
+      max-width: 15rem;
+    }
+  }
+</style>

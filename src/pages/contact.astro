@@ -1,0 +1,74 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<Layout />
+<Nav />
+<main>
+  <div class="wrapper">
+    <h1>LOCATION + PARKING</h1>
+    <p>
+      MYSTIC MANES is located at 708 South Tejon Street near Weidner Field, just
+      outside downtown Colorado Springs. Center parking is directly in the back
+      behind Kinfolk Salon Building.
+    </p>
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3108.3627976208454!2d-104.82690872365755!3d38.82415135102191!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x871344df9a7dba77%3A0x96d935c70a52169b!2s708%20S%20Tejon%20St%2C%20Colorado%20Springs%2C%20CO%2080903!5e0!3m2!1sen!2sus!4v1742403933437!5m2!1sen!2sus"
+      width="800"
+      height="450"
+      style="border:0;"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+</main>
+<Footer />
+
+<style>
+  * {
+    font-family: "Poppins", sans-serif;
+    padding: 0;
+    margin: 0;
+  }
+
+  main {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensures full viewport height */
+    width: 100%;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4rem;
+  }
+
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+
+    margin: 0;
+  }
+
+  iframe {
+    border: 0;
+    max-width: 100%;
+    min-height: 10rem;
+    padding-inline: 1rem;
+  }
+
+  h1 {
+    font-size: clamp(1.5rem, 2.5vw, 3rem);
+    text-align: center;
+  }
+
+  p {
+    text-align: center;
+    max-width: 45rem;
+    font-size: clamp(1rem, 2.2vw, 1.3rem);
+  }
+</style>

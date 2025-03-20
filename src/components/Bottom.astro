@@ -1,0 +1,67 @@
+---
+// AltFooter.astro
+---
+
+<footer>
+  <h1>Cuts & <span class="color">Color</span></h1>
+  <p>Colorado Springs' personalized salon experience</p>
+  <a>Book Now</a>
+</footer>
+
+<style>
+  footer {
+    position: absolute;
+    width: 100%;
+    bottom: 0px;
+    color: black;
+    text-align: center;
+    padding-bottom: 1.5rem;
+  }
+
+  h1 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    text-transform: uppercase;
+    font-size: clamp(2.25rem, 6vw, 3.5rem);
+    line-height: 1.2;
+  }
+
+  p {
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: clamp(0.85rem, 2.2vw, 1.05rem);
+    padding-bottom: 1rem;
+  }
+
+  a {
+    border: 2px solid black;
+    border-radius: 0px;
+    box-sizing: border-box;
+    color: black;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    outline: none;
+    overflow: visible;
+    padding: 0.5rem 1.5rem;
+    position: relative;
+    text-align: center;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    font-family: "Poppins", sans-serif;
+  }
+
+  a:hover {
+    background-color: black;
+    color: white;
+  }
+
+  .color {
+    background: linear-gradient(to right, rgb(84, 14, 86), rgb(132, 24, 37));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+</style>
