@@ -32,22 +32,29 @@ const testimonialData = [
 
 <Layout />
 <Nav />
+<div class="heading">
+  <div class="heading-text">
+  <h1>UNLOCK THE MAGIC IN YOUR HAIR.</h1>
+</div>
+</div>
 <main>
-  <div class="split-wrapper">
-    <div class="image-wrapper">
-      <img src="kasey.jpg" alt="Image 1" />
-    </div>
     <div class="text-wrapper">
+      <h2>MEET KASEY</h2>
       <p>
         Located in historic downtown Colorado Springs, MYSTIC MANES offers big
         city experience in a relaxed salon. Kasey Esclavon is a master of her
         craft—with specialized areas of expertise—and educates every client on
-        how to maintain their look at home. She delivers consisten results and
+        how to maintain their look at home. She delivers consistent results and
         personalized service in a welcoming atmosphere.
       </p>
     </div>
-  </div>
-  <Testimonial testimonials={testimonialData} />
+    <div class="image-wrapper">
+      <img src="kasey.jpg" alt="Image 1" />
+      <h3>KASEY ESCLAVON</h3>
+      <p>Owner & Stylist</p>
+    </div>
+  
+  
 </main>
 
 <Footer />
@@ -56,39 +63,78 @@ const testimonialData = [
   main {
     display: flex;
     flex-direction: column;
-    width: 100%;
-    min-height: 100vh; /* Ensures full viewport height */
-    margin-top: 8rem;
+    max-width: 1200px;
+    margin: 0 auto;
     justify-content: center;
     align-items: center;
+    margin-top: 2rem;
+    padding: 1rem;
+  }
+
+  .heading {
+    display: flex;
+    background-image: url("hairbg.jpg");
+    background-size: cover;
+    background-position: 10% 60%;
+    max-width: 100%;
+    min-height: 20rem;
+    margin-top: 6rem;
+    align-items: center;
+  }
+
+  .heading-text {
+    line-height: 1.1;
+    margin: 0 auto;
+    padding-inline: 1rem;
+    max-width: 1200px;
+    color: white;
+  }
+
+  .heading-text h1{
+    font-size: clamp(3.75rem, 6vw, 4.5rem);
+    font-family: "Poppins", sans-serif;
+    letter-spacing: 0.1em;
   }
 
   .split-wrapper {
-    max-width: 1080px;
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    gap: 1rem;
     padding: 1rem;
     margin: 0 auto;
     margin-bottom: 5%;
+    gap: 1rem;
   }
 
   .text-wrapper {
-    max-width: 50%;
-    font-size: clamp(1rem, 2.2vw, 1.3rem);
+    max-width: 100%;
+    font-size: clamp(1.5rem, 1.25vw, 2.5rem);
+    text-align: center;
+  }
+
+  .text-wrapper h2 {
+    font-size: clamp(1rem, 1.25vw, 1.5rem);
+    font-family: "Poppins", sans-serif;
+    letter-spacing: 0.1em;
+    padding: 1rem;
+  }
+
+  .text-wrapper p {
+    font-size: clamp(1.25rem, 1.35vw, 1.5rem);
   }
 
   .image-wrapper {
-    max-width: 50%;
+    max-width: 100%;
+    
+    margin-block: 3rem;
+    font-family: "Poppins", sans-serif;
   }
 
-  img {
+  .image-wrapper img {
     max-width: 100%;
     height: auto;
-    border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    padding-bottom: 1rem;
   }
 
   @media (max-width: 767px) {
