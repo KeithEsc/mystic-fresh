@@ -1,21 +1,79 @@
 ---
 import "../styles/global.css";
 import NavMenu from "../components/NavMenu.tsx";
+import SpeedInsights from "@vercel/speed-insights/astro";
+import Analytics from "@vercel/analytics/astro";
+
+export interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "Mystic Manes | Colorado Springs Hair Salon",
+  description = "Mystic Manes – Colorado Springs' personalized salon experience for expert hair styling, color, and care. Book your magical hair transformation today!",
+} = Astro.props;
 ---
 
-<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/96faviconMystic.webp" />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Poppins:wght@400;500;600;700&display=swap"
     />
     <meta name="generator" content={Astro.generator} />
-    <title>Astro Basics</title>
+    <title>{title}</title>
+    <meta name="description" content={description} />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "HairSalon",
+        "name": "Mystic Manes Beauty",
+        "image": "https://www.mysticmanesbeauty.com/MysticManesSig.png",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "708 S Tejon St",
+          "addressLocality": "Colorado Springs",
+          "addressRegion": "CO",
+          "postalCode": "80903",
+          "addressCountry": "US"
+        },
+        "telephone": "+1-719-645-5650",
+        "priceRange": "$$",
+        "url": "https://mysticmanesbeauty.com",
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": "Monday",
+            "opens": "00:00",
+            "closes": "00:00"
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Tuesday", "Wednesday", "Thursday"],
+            "opens": "09:00",
+            "closes": "19:00"
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Friday", "Saturday", "Sunday"],
+            "opens": "00:00",
+            "closes": "00:00"
+          }
+        ],
+        "sameAs": [
+          "https://www.facebook.com/mysticmanesbeauty",
+          "https://www.instagram.com/mysticmanesbeauty"
+        ]
+      }
+    </script>
   </head>
+  <SpeedInsights />
+  <Analytics />
   <NavMenu client:load />
   <body class="font-sans">
     <slot />
