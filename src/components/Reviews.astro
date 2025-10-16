@@ -1,0 +1,29 @@
+---
+import { ExternalLink } from "lucide-react";
+import ReactReviews from "@/components/ReactGoogleReviews.tsx";
+---
+
+<section
+  id="reviews"
+  class="bg-[var(--color-lav)] py-12 md:py-12 pb-12 md:pb-12 px-4"
+>
+  <div class="reviews-container max-w-7xl md:px-4 mx-auto">
+    <h2
+      class="text-[var(--dark)] text-4xl text-center mb-4 playfair font-semibold"
+    >
+      What Our Customers Say
+    </h2>
+    <p class="text-[var(--dark)] text-center mb-8">
+      Proud to have these lovely people as clients! Here are some of my favorite
+      reviews:
+    </p>
+    <ReactReviews client:load />
+    <div class="flex justify-center">
+      <a
+        href="https://www.google.com/search?q=mystic+manes+colorado+springs&oq=mystic+manes+colorado+springs&gs_lcrp=EgZjaHJvbWUqCQgAECMYJxjjAjIJCAAQIxgnGOMCMgwIARAuGCcYrwEYxwEyCggCEAAYgAQYogQyCggDEAAYgAQYogQyBwgEEAAY7wUyCggFEAAYgAQYogQyBggGEEUYPDIGCAcQRRg80gEIMzQ2OGowajeoAgCwAgA&sourceid=chrome&ie=UTF-8#mpd=~11131998820237324642/customers/reviews"
+        class="inline-flex gap-2 items-center font-medium hover:bg-[var(--color-dark-blue)]/85 block w-fit mx-auto text-[var(--light)] py-2 px-4 bg-[var(--color-dark-blue)] rounded text-sm"
+        >Read More Reviews <ExternalLink size="16" /></a
+      >
+    </div>
+  </div>
+</section>

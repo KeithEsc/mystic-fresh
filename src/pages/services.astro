@@ -1,0 +1,1415 @@
+---
+// ...existing code...
+import Layout from "../layouts/Layout.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<Layout>
+  <main id="main" class="my-12 md:my-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 mb-8">
+      <div class="text-center mb-8">
+        <h1
+          class="text-5xl font-extrabold playfair tracking-tight sm:text-6xl text-[var(--color-dark-blue)]"
+        >
+          Our Services
+        </h1>
+        <p
+          class="mt-4 max-w-2xl mx-auto text-xl text-[var(--color-dark-blue)] lato"
+        >
+          Explore our offerings, where artistry meets beauty. Find the perfect
+          treatment to transform your look.
+        </p>
+      </div>
+
+      <!-- Pricing Structure Disclaimer (semantic aside) -->
+      <aside
+        class="disclaimer-box p-4 rounded-lg shadow-md mb-12"
+        aria-label="Pricing disclaimer"
+      >
+        <p class="font-medium text-lg text-gray-800">
+          <span class="text-d97706 font-extrabold mr-2">!</span>
+          All service prices shown represent our starting prices. Prices also vary
+          according to length and condition of hair and are subject to a proper consultation.
+        </p>
+      </aside>
+
+      <div id="service-container" class="space-y-16">
+        <!-- Category: Haircuts & Styling -->
+        <section
+          id="cat-haircuts"
+          aria-labelledby="heading-haircuts"
+          class="bg-white p-6 sm:p-10 rounded-xl shadow-2xl transition duration-300 hover:shadow-3xl border-t-4 border-primary"
+        >
+          <h2
+            id="heading-haircuts"
+            class="text-3xl sm:text-4xl font-bold mb-2 text-primary"
+          >
+            Haircuts & Styling
+          </h2>
+          <p class="mb-8 uppercase text-[var(--color-dark-blue)]">
+            Hair Services Colorado Springs CO
+          </p>
+
+          <ul
+            class="grid grid-cols-1 md:grid-cols-2 gap-8"
+            role="list"
+            aria-label="Haircut and styling services"
+          >
+            <li>
+              <article
+                itemscope
+                itemtype="https://schema.org/Service"
+                class="bg-accent p-6 rounded-lg shadow-md hover:shadow-lg transition duration-200"
+              >
+                <header class="flex justify-between items-start mb-2">
+                  <h3
+                    itemprop="name"
+                    class="text-xl font-semibold text-gray-800"
+                  >
+                    Haircut
+                  </h3>
+                  <div
+                    itemprop="offers"
+                    itemscope
+                    itemtype="https://schema.org/Offer"
+                    aria-label="Price"
+                  >
+                    <meta itemprop="priceCurrency" content="USD" />
+                    <span
+                      class="text-xl font-bold text-primary"
+                      itemprop="price"
+                      content="65.00">$65.00</span
+                    >
+                  </div>
+                </header>
+                <p itemprop="description" class="text-gray-500 text-sm">
+                  Ages 11+ includes wash and style. For very curly hair or
+                  people wanting a curly haircut please book <strong
+                    >DevaCurl cut</strong
+                  >. I do not offer short mens cuts. All pricing is a starting
+                  at price.
+                </p>
+              </article>
+            </li>
+
+            <li>
+              <article
+                itemscope
+                itemtype="https://schema.org/Service"
+                class="bg-accent p-6 rounded-lg shadow-md hover:shadow-lg transition duration-200"
+              >
+                <header class="flex justify-between items-start mb-2">
+                  <h3
+                    itemprop="name"
+                    class="text-xl font-semibold text-gray-800"
+                  >
+                    DevaCurl Cut
+                  </h3>
+                  <div
+                    itemprop="offers"
+                    itemscope
+                    itemtype="https://schema.org/Offer"
+                    aria-label="Price"
+                  >
+                    <meta itemprop="priceCurrency" content="USD" />
+                    <span
+                      class="text-xl font-bold text-primary"
+                      itemprop="price"
+                      content="80.00">$80.00</span
+                    >
+                  </div>
+                </header>
+                <p itemprop="description" class="text-gray-500 text-sm">
+                  Call salon for free in person consult before booking please!
+                  This is a dry cut for curly hair. Come in with hair down, dry,
+                  and detangled! It will be washed and styled curly after dry
+                  cut. Do not wear hair up or in a bun please.
+                </p>
+              </article>
+            </li>
+
+            <li>
+              <article
+                itemscope
+                itemtype="https://schema.org/Service"
+                class="bg-accent p-6 rounded-lg shadow-md hover:shadow-lg transition duration-200"
+              >
+                <header class="flex justify-between items-start mb-2">
+                  <h3
+                    itemprop="name"
+                    class="text-xl font-semibold text-gray-800"
+                  >
+                    Kids Girl cut (10 &amp; under)
+                  </h3>
+                  <div
+                    itemprop="offers"
+                    itemscope
+                    itemtype="https://schema.org/Offer"
+                    aria-label="Price"
+                  >
+                    <meta itemprop="priceCurrency" content="USD" />
+                    <span
+                      class="text-xl font-bold text-primary"
+                      itemprop="price"
+                      content="50.00">$50.00</span
+                    >
+                  </div>
+                </header>
+                <p itemprop="description" class="text-gray-500 text-sm">
+                  Please have child's hair washed and brushed before coming in,
+                  this is a dry cut only, otherwise book as regular haircut for
+                  wash and style.
+                </p>
+              </article>
+            </li>
+
+            <li>
+              <article
+                itemscope
+                itemtype="https://schema.org/Service"
+                class="bg-accent p-6 rounded-lg shadow-md hover:shadow-lg transition duration-200"
+              >
+                <header class="flex justify-between items-start mb-2">
+                  <h3
+                    itemprop="name"
+                    class="text-xl font-semibold text-gray-800"
+                  >
+                    Bang Trim
+                  </h3>
+                  <div
+                    itemprop="offers"
+                    itemscope
+                    itemtype="https://schema.org/Offer"
+                    aria-label="Price"
+                  >
+                    <meta itemprop="priceCurrency" content="USD" />
+                    <span
+                      class="text-xl font-bold text-primary"
+                      itemprop="price"
+                      content="10.00">$10.00</span
+                    >
+                  </div>
+                </header>
+                <p itemprop="description" class="text-gray-500 text-sm">
+                  Quick trim for your bangs.
+                </p>
+              </article>
+            </li>
+
+            <li>
+              <article
+                itemscope
+                itemtype="https://schema.org/Service"
+                class="bg-accent p-6 rounded-lg shadow-md hover:shadow-lg transition duration-200"
+              >
+                <header class="flex justify-between items-start mb-2">
+                  <h3
+                    itemprop="name"
+                    class="text-xl font-semibold text-gray-800"
+                  >
+                    Blowout
+                  </h3>
+                  <div
+                    itemprop="offers"
+                    itemscope
+                    itemtype="https://schema.org/Offer"
+                    aria-label="Price"
+                  >
+                    <meta itemprop="priceCurrency" content="USD" />
+                    <span
+                      class="text-xl font-bold text-primary"
+                      itemprop="price"
+                      content="45.00">$45.00</span
+                    >
+                  </div>
+                </header>
+                <p itemprop="description" class="text-gray-500 text-sm">
+                  Comes with shampoo.
+                </p>
+              </article>
+            </li>
+
+            <li>
+              <article
+                itemscope
+                itemtype="https://schema.org/Service"
+                class="bg-accent p-6 rounded-lg shadow-md hover:shadow-lg transition duration-200"
+              >
+                <header class="flex justify-between items-start mb-2">
+                  <h3
+                    itemprop="name"
+                    class="text-xl font-semibold text-gray-800"
+                  >
+                    DevaCurl Style
+                  </h3>
+                  <div
+                    itemprop="offers"
+                    itemscope
+                    itemtype="https://schema.org/Offer"
+                    aria-label="Price"
+                  >
+                    <meta itemprop="priceCurrency" content="USD" />
+                    <span
+                      class="text-xl font-bold text-primary"
+                      itemprop="price"
+                      content="40.00">Starting at $40.00</span
+                    >
+                  </div>
+                </header>
+                <p itemprop="description" class="text-gray-500 text-sm">
+                  Curly hair styling, with tips and tricks! No cut included,
+                  just wash and dry.
+                </p>
+              </article>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Category: Color & Lightening -->
+        <section
+          id="cat-color"
+          aria-labelledby="heading-color"
+          class="bg-white p-6 sm:p-10 rounded-xl shadow-2xl transition duration-300 hover:shadow-3xl border-t-4 border-primary"
+        >
+          <h2
+            id="heading-color"
+            class="text-3xl sm:text-4xl font-bold mb-2 text-primary"
+          >
+            Color & Lightening
+          </h2>
+          <p class="mb-8 uppercase text-[var(--color-dark-blue)]">
+            Hair Coloring Colorado Springs CO
+          </p>
+
+          <ul
+            class="grid grid-cols-1 md:grid-cols-2 gap-8"
+            role="list"
+            aria-label="Color and lightening services"
+          >
+            <li>
+              <article
+                itemscope
+                itemtype="https://schema.org/Service"
+                class="bg-accent p-6 rounded-lg shadow-md hover:shadow-lg transition duration-200"
+              >
+                <header class="flex justify-between items-start mb-2">
+                  <h3
+                    itemprop="name"
+                    class="text-xl font-semibold text-gray-800"
+                  >
+                    Root Retouch
+                  </h3>
+                  <div
+                    itemprop="offers"
+                    itemscope
+                    itemtype="https://schema.org/Offer"
+                    aria-label="Price"
+                  >
+                    <meta itemprop="priceCurrency" content="USD" />
+                    <span
+                      class="text-xl font-bold text-primary"
+                      itemprop="price"
+                      content="90.00">$90.00</span
+                    >
+                  </div>
+                </header>
+                <p itemprop="description" class="text-gray-500 text-sm">
+                  Root color only or to cover gray. Comes with blowout and heat
+                  styling. Does not include foils/highlights or toner.
+                  Additional bowls of color are $30 each. Toners on the ends
+                  start at additional $30.
+                </p>
+              </article>
+            </li>
+
+            <li>
+              <article
+                itemscope
+                itemtype="https://schema.org/Service"
+                class="bg-accent p-6 rounded-lg shadow-md hover:shadow-lg transition duration-200"
+              >
+                <header class="flex justify-between items-start mb-2">
+                  <h3
+                    itemprop="name"
+                    class="text-xl font-semibold text-gray-800"
+                  >
+                    Root Retouch and Haircut
+                  </h3>
+                  <div
+                    itemprop="offers"
+                    itemscope
+                    itemtype="https://schema.org/Offer"
+                    aria-label="Price"
+                  >
+                    <meta itemprop="priceCurrency" content="USD" />
+                    <span
+                      class="text-xl font-bold text-primary"
+                      itemprop="price"
+                      content="155.00">$155.00</span
+                    >
+                  </div>
+                </header>
+                <p itemprop="description" class="text-gray-500 text-sm">
+                  Root color and customized haircut. Does not include foils or
+                  highlights.
+                </p>
+              </article>
+            </li>
+
+            <li>
+              <article
+                itemscope
+                itemtype="https://schema.org/Service"
+                class="bg-accent p-6 rounded-lg shadow-md hover:shadow-lg transition duration-200"
+              >
+                <header class="flex justify-between items-start mb-2">
+                  <h3
+                    itemprop="name"
+                    class="text-xl font-semibold text-gray-800"
+                  >
+                    All over Color
+                  </h3>
+                  <div
+                    itemprop="offers"
+                    itemscope
+                    itemtype="https://schema.org/Offer"
+                    aria-label="Price"
+                  >
+                    <meta itemprop="priceCurrency" content="USD" />
+                    <span
+                      class="text-xl font-bold text-primary"
+                      itemprop="price"
+                      content="150.00">$150.00</span
+                    >
+                  </div>
+                </header>
+                <p itemprop="description" class="text-gray-500 text-sm">
+                  All over color to darken or change tone (semi or permanent).
+                  Includes blowout. Does not include foils/highlights or
+                  all-over bleaching.
+                </p>
+              </article>
+            </li>
+
+            <li>
+              <article
+                itemscope
+                itemtype="https://schema.org/Service"
+                class="bg-accent p-6 rounded-lg shadow-md hover:shadow-lg transition duration-200"
+              >
+                <header class="flex justify-between items-start mb-2">
+                  <h3
+                    itemprop="name"
+                    class="text-xl font-semibold text-gray-800"
+                  >
+                    Color and Haircut
+                  </h3>
+                  <div
+                    itemprop="offers"
+                    itemscope
+                    itemtype="https://schema.org/Offer"
+                    aria-label="Price"
+                  >
+                    <meta itemprop="priceCurrency" content="USD" />
+                    <span
+                      class="text-xl font-bold text-primary"
+                      itemprop="price"
+                      content="180.00">$180.00</span
+                    >
+                  </div>
+                </header>
+                <p itemprop="description" class="text-gray-500 text-sm">
+                  All over or just roots of permanent or semi permanent color
+                  and customized haircut service. Does not include foils or
+                  highlights. Color pulled through ends on hair is additional
+                  cost.
+                </p>
+              </article>
+            </li>
+
+            <li>
+              <article
+                itemscope
+                itemtype="https://schema.org/Service"
+                class="bg-accent p-6 rounded-lg shadow-md hover:shadow-lg transition duration-200"
+              >
+                <header class="flex justify-between items-start mb-2">
+                  <h3
+                    itemprop="name"
+                    class="text-xl font-semibold text-gray-800"
+                  >
+                    Partial Highlight
+                  </h3>
+                  <div
+                    itemprop="offers"
+                    itemscope
+                    itemtype="https://schema.org/Offer"
+                    aria-label="Price"
+                  >
+                    <meta itemprop="priceCurrency" content="USD" />
+                    <span
+                      class="text-xl font-bold text-primary"
+                      itemprop="price"
+                      content="150.00">$150.00</span
+                    >
+                  </div>
+                </header>
+                <p itemprop="description" class="text-gray-500 text-sm">
+                  Color applied using a minimum number of foils to achieve
+                  highlights in desired locations (includes root retouching).
+                  Comes with blowout. Toner included in some cases.
+                </p>
+              </article>
+            </li>
+
+            <li>
+              <article
+                itemscope
+                itemtype="https://schema.org/Service"
+                class="bg-accent p-6 rounded-lg shadow-md hover:shadow-lg transition duration-200"
+              >
+                <header class="flex justify-between items-start mb-2">
+                  <h3
+                    itemprop="name"
+                    class="text-xl font-semibold text-gray-800"
+                  >
+                    Partial Highlight and Haircut
+                  </h3>
+                  <div
+                    itemprop="offers"
+                    itemscope
+                    itemtype="https://schema.org/Offer"
+                    aria-label="Price"
+                  >
+                    <meta itemprop="priceCurrency" content="USD" />
+                    <span
+                      class="text-xl font-bold text-primary"
+                      itemprop="price"
+                      content="220.00">$220.00</span
+                    >
+                  </div>
+                </header>
+                <p itemprop="description" class="text-gray-500 text-sm">
+                  Partial highlights and customized haircut.
+                </p>
+              </article>
+            </li>
+
+            <li>
+              <article
+                itemscope
+                itemtype="https://schema.org/Service"
+                class="bg-accent p-6 rounded-lg shadow-md hover:shadow-lg transition duration-200"
+              >
+                <header class="flex justify-between items-start mb-2">
+                  <h3
+                    itemprop="name"
+                    class="text-xl font-semibold text-gray-800"
+                  >
+                    Full Highlight
+                  </h3>
+                  <div
+                    itemprop="offers"
+                    itemscope
+                    itemtype="https://schema.org/Offer"
+                    aria-label="Price"
+                  >
+                    <meta itemprop="priceCurrency" content="USD" />
+                    <span
+                      class="text-xl font-bold text-primary"
+                      itemprop="price"
+                      content="200.00">$200.00</span
+                    >
+                  </div>
+                </header>
+                <p itemprop="description" class="text-gray-500 text-sm">
+                  Full head of highlights (includes root retouching). Includes
+                  blowout. Toner is included. Price range is $180-$250 depending
+                  upon hair length, product, and time.
+                </p>
+              </article>
+            </li>
+
+            <li>
+              <article
+                itemscope
+                itemtype="https://schema.org/Service"
+                class="bg-accent p-6 rounded-lg shadow-md hover:shadow-lg transition duration-200"
+              >
+                <header class="flex justify-between items-start mb-2">
+                  <h3
+                    itemprop="name"
+                    class="text-xl font-semibold text-gray-800"
+                  >
+                    Full Highlight and Haircut
+                  </h3>
+                  <div
+                    itemprop="offers"
+                    itemscope
+                    itemtype="https://schema.org/Offer"
+                    aria-label="Price"
+                  >
+                    <meta itemprop="priceCurrency" content="USD" />
+                    <span
+                      class="text-xl font-bold text-primary"
+                      itemprop="price"
+                      content="250.00">$250.00</span
+                    >
+                  </div>
+                </header>
+                <p itemprop="description" class="text-gray-500 text-sm">
+                  Full head of highlights and customized haircut.
+                </p>
+              </article>
+            </li>
+
+            <li>
+              <article
+                itemscope
+                itemtype="https://schema.org/Service"
+                class="bg-accent p-6 rounded-lg shadow-md hover:shadow-lg transition duration-200"
+              >
+                <header class="flex justify-between items-start mb-2">
+                  <h3
+                    itemprop="name"
+                    class="text-xl font-semibold text-gray-800"
+                  >
+                    Color &amp; Partial Highlight
+                  </h3>
+                  <div
+                    itemprop="offers"
+                    itemscope
+                    itemtype="https://schema.org/Offer"
+                    aria-label="Price"
+                  >
+                    <meta itemprop="priceCurrency" content="USD" />
+                    <span
+                      class="text-xl font-bold text-primary"
+                      itemprop="price"
+                      content="180.00">$180.00</span
+                    >
+                  </div>
+                </header>
+                <p itemprop="description" class="text-gray-500 text-sm">
+                  All over permanent/semi-permanent color with partial
+                  highlights. Includes blowout.
+                </p>
+              </article>
+            </li>
+
+            <li>
+              <article
+                itemscope
+                itemtype="https://schema.org/Service"
+                class="bg-accent p-6 rounded-lg shadow-md hover:shadow-lg transition duration-200"
+              >
+                <header class="flex justify-between items-start mb-2">
+                  <h3
+                    itemprop="name"
+                    class="text-xl font-semibold text-gray-800"
+                  >
+                    Color and Full Highlight
+                  </h3>
+                  <div
+                    itemprop="offers"
+                    itemscope
+                    itemtype="https://schema.org/Offer"
+                    aria-label="Price"
+                  >
+                    <meta itemprop="priceCurrency" content="USD" />
+                    <span
+                      class="text-xl font-bold text-primary"
+                      itemprop="price"
+                      content="220.00">$220.00</span
+                    >
+                  </div>
+                </header>
+                <p itemprop="description" class="text-gray-500 text-sm">
+                  All over permanent or semi permanent color with full
+                  highlights. Includes blowout.
+                </p>
+              </article>
+            </li>
+
+            <li>
+              <article
+                itemscope
+                itemtype="https://schema.org/Service"
+                class="bg-accent p-6 rounded-lg shadow-md hover:shadow-lg transition duration-200"
+              >
+                <header class="flex justify-between items-start mb-2">
+                  <h3
+                    itemprop="name"
+                    class="text-xl font-semibold text-gray-800"
+                  >
+                    Color, Partial Highlight &amp; Haircut
+                  </h3>
+                  <div
+                    itemprop="offers"
+                    itemscope
+                    itemtype="https://schema.org/Offer"
+                    aria-label="Price"
+                  >
+                    <meta itemprop="priceCurrency" content="USD" />
+                    <span
+                      class="text-xl font-bold text-primary"
+                      itemprop="price"
+                      content="250.00">$250.00</span
+                    >
+                  </div>
+                </header>
+                <p itemprop="description" class="text-gray-500 text-sm">
+                  Color, partial highlights, and customized haircut.
+                </p>
+              </article>
+            </li>
+
+            <li>
+              <article
+                itemscope
+                itemtype="https://schema.org/Service"
+                class="bg-accent p-6 rounded-lg shadow-md hover:shadow-lg transition duration-200"
+              >
+                <header class="flex justify-between items-start mb-2">
+                  <h3
+                    itemprop="name"
+                    class="text-xl font-semibold text-gray-800"
+                  >
+                    Color, Full Highlight and Haircut
+                  </h3>
+                  <div
+                    itemprop="offers"
+                    itemscope
+                    itemtype="https://schema.org/Offer"
+                    aria-label="Price"
+                  >
+                    <meta itemprop="priceCurrency" content="USD" />
+                    <span
+                      class="text-xl font-bold text-primary"
+                      itemprop="price"
+                      content="250.00">$250.00</span
+                    >
+                  </div>
+                </header>
+                <p itemprop="description" class="text-gray-500 text-sm">
+                  All over permanent or semi permanent color with highlights
+                  including customized haircut.
+                </p>
+              </article>
+            </li>
+
+            <li>
+              <article
+                itemscope
+                itemtype="https://schema.org/Service"
+                class="bg-accent p-6 rounded-lg shadow-md hover:shadow-lg transition duration-200"
+              >
+                <header class="flex justify-between items-start mb-2">
+                  <h3
+                    itemprop="name"
+                    class="text-xl font-semibold text-gray-800"
+                  >
+                    Full Balayage
+                  </h3>
+                  <div
+                    itemprop="offers"
+                    itemscope
+                    itemtype="https://schema.org/Offer"
+                    aria-label="Price"
+                  >
+                    <meta itemprop="priceCurrency" content="USD" />
+                    <span
+                      class="text-xl font-bold text-primary"
+                      itemprop="price"
+                      content="250.00">$250.00</span
+                    >
+                  </div>
+                </header>
+                <p itemprop="description" class="text-gray-500 text-sm">
+                  Includes blowout.
+                </p>
+              </article>
+            </li>
+
+            <li>
+              <article
+                itemscope
+                itemtype="https://schema.org/Service"
+                class="bg-accent p-6 rounded-lg shadow-md hover:shadow-lg transition duration-200"
+              >
+                <header class="flex justify-between items-start mb-2">
+                  <h3
+                    itemprop="name"
+                    class="text-xl font-semibold text-gray-800"
+                  >
+                    Balayage &amp; Haircut
+                  </h3>
+                  <div
+                    itemprop="offers"
+                    itemscope
+                    itemtype="https://schema.org/Offer"
+                    aria-label="Price"
+                  >
+                    <meta itemprop="priceCurrency" content="USD" />
+                    <span
+                      class="text-xl font-bold text-primary"
+                      itemprop="price"
+                      content="300.00">$300.00</span
+                    >
+                  </div>
+                </header>
+                <p itemprop="description" class="text-gray-500 text-sm">
+                  Full Balayage service with a customized haircut.
+                </p>
+              </article>
+            </li>
+
+            <li>
+              <article
+                itemscope
+                itemtype="https://schema.org/Service"
+                class="bg-accent p-6 rounded-lg shadow-md hover:shadow-lg transition duration-200"
+              >
+                <header class="flex justify-between items-start mb-2">
+                  <h3
+                    itemprop="name"
+                    class="text-xl font-semibold text-gray-800"
+                  >
+                    Partial Balayage
+                  </h3>
+                  <div
+                    itemprop="offers"
+                    itemscope
+                    itemtype="https://schema.org/Offer"
+                    aria-label="Price"
+                  >
+                    <meta itemprop="priceCurrency" content="USD" />
+                    <span
+                      class="text-xl font-bold text-primary"
+                      itemprop="price"
+                      content="150.00">$150.00</span
+                    >
+                  </div>
+                </header>
+                <p itemprop="description" class="text-gray-500 text-sm">
+                  Includes blowout.
+                </p>
+              </article>
+            </li>
+
+            <li>
+              <article
+                itemscope
+                itemtype="https://schema.org/Service"
+                class="bg-accent p-6 rounded-lg shadow-md hover:shadow-lg transition duration-200"
+              >
+                <header class="flex justify-between items-start mb-2">
+                  <h3
+                    itemprop="name"
+                    class="text-xl font-semibold text-gray-800"
+                  >
+                    Partial Balayage and Haircut
+                  </h3>
+                  <div
+                    itemprop="offers"
+                    itemscope
+                    itemtype="https://schema.org/Offer"
+                    aria-label="Price"
+                  >
+                    <meta itemprop="priceCurrency" content="USD" />
+                    <span
+                      class="text-xl font-bold text-primary"
+                      itemprop="price"
+                      content="200.00">$200.00</span
+                    >
+                  </div>
+                </header>
+                <p itemprop="description" class="text-gray-500 text-sm">
+                  Partial Balayage service with a customized haircut.
+                </p>
+              </article>
+            </li>
+
+            <li>
+              <article
+                itemscope
+                itemtype="https://schema.org/Service"
+                class="bg-accent p-6 rounded-lg shadow-md hover:shadow-lg transition duration-200"
+              >
+                <header class="flex justify-between items-start mb-2">
+                  <h3
+                    itemprop="name"
+                    class="text-xl font-semibold text-gray-800"
+                  >
+                    Toner and Blow Out
+                  </h3>
+                  <div
+                    itemprop="offers"
+                    itemscope
+                    itemtype="https://schema.org/Offer"
+                    aria-label="Price"
+                  >
+                    <meta itemprop="priceCurrency" content="USD" />
+                    <span
+                      class="text-xl font-bold text-primary"
+                      itemprop="price"
+                      content="70.00">$70.00</span
+                    >
+                  </div>
+                </header>
+                <p itemprop="description" class="text-gray-500 text-sm">
+                  Includes heat styling.
+                </p>
+              </article>
+            </li>
+
+            <li>
+              <article
+                itemscope
+                itemtype="https://schema.org/Service"
+                class="bg-accent p-6 rounded-lg shadow-md hover:shadow-lg transition duration-200"
+              >
+                <header class="flex justify-between items-start mb-2">
+                  <h3
+                    itemprop="name"
+                    class="text-xl font-semibold text-gray-800"
+                  >
+                    Toner and Haircut
+                  </h3>
+                  <div
+                    itemprop="offers"
+                    itemscope
+                    itemtype="https://schema.org/Offer"
+                    aria-label="Price"
+                  >
+                    <meta itemprop="priceCurrency" content="USD" />
+                    <span
+                      class="text-xl font-bold text-primary"
+                      itemprop="price"
+                      content="90.00">$90.00</span
+                    >
+                  </div>
+                </header>
+                <p itemprop="description" class="text-gray-500 text-sm">
+                  Toner and haircut only.
+                </p>
+              </article>
+            </li>
+
+            <li>
+              <article
+                itemscope
+                itemtype="https://schema.org/Service"
+                class="bg-accent p-6 rounded-lg shadow-md hover:shadow-lg transition duration-200"
+              >
+                <header class="flex justify-between items-start mb-2">
+                  <h3
+                    itemprop="name"
+                    class="text-xl font-semibold text-gray-800"
+                  >
+                    DevaCurl Cut and Color
+                  </h3>
+                  <div
+                    itemprop="offers"
+                    itemscope
+                    itemtype="https://schema.org/Offer"
+                    aria-label="Price"
+                  >
+                    <meta itemprop="priceCurrency" content="USD" />
+                    <span
+                      class="text-xl font-bold text-primary"
+                      itemprop="price"
+                      content="200.00">$200.00</span
+                    >
+                  </div>
+                </header>
+                <p
+                  class="text-gray-500 text-sm font-bold text-red-600"
+                  aria-hidden="false"
+                >
+                  CALL SALON FOR CONSULT FIRST.
+                </p>
+                <p itemprop="description" class="text-gray-500 text-sm">
+                  Come in with hair down, dry, and detangled! It will be washed
+                  and styled curly after dry cut. Do NOT wear hair up or in a
+                  bun please.
+                </p>
+              </article>
+            </li>
+
+            <li>
+              <article
+                itemscope
+                itemtype="https://schema.org/Service"
+                class="bg-accent p-6 rounded-lg shadow-md hover:shadow-lg transition duration-200"
+              >
+                <header class="flex justify-between items-start mb-2">
+                  <h3
+                    itemprop="name"
+                    class="text-xl font-semibold text-gray-800"
+                  >
+                    DevaCurl Cut and Highlight
+                  </h3>
+                  <div
+                    itemprop="offers"
+                    itemscope
+                    itemtype="https://schema.org/Offer"
+                    aria-label="Price"
+                  >
+                    <meta itemprop="priceCurrency" content="USD" />
+                    <span
+                      class="text-xl font-bold text-primary"
+                      itemprop="price"
+                      content="250.00">$250.00</span
+                    >
+                  </div>
+                </header>
+                <p class="text-gray-500 text-sm font-bold text-red-600">
+                  CALL/TEXT SALON FOR CONSULTATION BEFORE BOOKING.
+                </p>
+                <p itemprop="description" class="text-gray-500 text-sm">
+                  Come in with hair down, detangled, and no product. I will dry
+                  cut first then color! Do NOT wear hair up or in a bun please.
+                </p>
+              </article>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Category: Treatments & Add-ons -->
+        <section
+          id="cat-treatments"
+          aria-labelledby="heading-treatments"
+          class="bg-white p-6 sm:p-10 rounded-xl shadow-2xl transition duration-300 hover:shadow-3xl border-t-4 border-primary"
+        >
+          <h2
+            id="heading-treatments"
+            class="text-3xl sm:text-4xl font-bold mb-2 text-primary"
+          >
+            Treatments & Add-ons
+          </h2>
+          <p class="mb-8 uppercase text-[var(--color-dark-blue)]">
+            Hair Treatments Colorado Springs CO
+          </p>
+
+          <aside
+            class="chem-fee-box p-4 rounded-lg shadow-lg mb-8 text-center"
+            aria-label="Chemical fee"
+          >
+            <h3 class="text-xl font-bold mb-1">
+              Mandatory Chemical Fee: $25.00
+            </h3>
+            <p class="text-sm">
+              This is an additional, non-negotiable charge applied to <strong
+                >all chemical services</strong
+              > (color, highlights, balayage, keratin) to cover the cost of high-quality
+              materials and disposal.
+            </p>
+          </aside>
+
+          <ul
+            class="grid grid-cols-1 md:grid-cols-2 gap-8"
+            role="list"
+            aria-label="Treatments and add-ons"
+          >
+            <li>
+              <article
+                itemscope
+                itemtype="https://schema.org/Service"
+                class="bg-accent p-6 rounded-lg shadow-md hover:shadow-lg transition duration-200"
+              >
+                <header class="flex justify-between items-start mb-2">
+                  <h3
+                    itemprop="name"
+                    class="text-xl font-semibold text-gray-800"
+                  >
+                    Keratin Smoothing Treatment (NKST)
+                  </h3>
+                  <div
+                    itemprop="offers"
+                    itemscope
+                    itemtype="https://schema.org/Offer"
+                    aria-label="Price"
+                  >
+                    <meta itemprop="priceCurrency" content="USD" />
+                    <span
+                      class="text-xl font-bold text-primary"
+                      itemprop="price"
+                      content="250.00">Starts at $250.00</span
+                    >
+                  </div>
+                </header>
+                <p itemprop="description" class="text-gray-500 text-sm">
+                  This is the Keratin Complex NKST treatment! Please book
+                  consult beforehand to discuss, otherwise I will text you for
+                  an over the phone consult. Price starts at $250 and goes up
+                  depending on length and thickness of hair.
+                </p>
+              </article>
+            </li>
+
+            <li>
+              <article
+                itemscope
+                itemtype="https://schema.org/Service"
+                class="bg-accent p-6 rounded-lg shadow-md hover:shadow-lg transition duration-200"
+              >
+                <header class="flex justify-between items-start mb-2">
+                  <h3
+                    itemprop="name"
+                    class="text-xl font-semibold text-gray-800"
+                  >
+                    Malibu Treatment
+                  </h3>
+                  <div
+                    itemprop="offers"
+                    itemscope
+                    itemtype="https://schema.org/Offer"
+                    aria-label="Price"
+                  >
+                    <meta itemprop="priceCurrency" content="USD" />
+                    <span
+                      class="text-xl font-bold text-primary"
+                      itemprop="price"
+                      content="40.00">$40.00</span
+                    >
+                  </div>
+                </header>
+                <p itemprop="description" class="text-gray-500 text-sm">
+                  Blowdry not included. This is a treatment to remove hardwater,
+                  minerals, medicine, buildup/residue from hair! Blowout after
+                  is an additional $30-$50 depending of hair
+                  thickness/length/style wanted!
+                </p>
+              </article>
+            </li>
+
+            <li>
+              <article
+                itemscope
+                itemtype="https://schema.org/Service"
+                class="bg-accent p-6 rounded-lg shadow-md hover:shadow-lg transition duration-200"
+              >
+                <header class="flex justify-between items-start mb-2">
+                  <h3
+                    itemprop="name"
+                    class="text-xl font-semibold text-gray-800"
+                  >
+                    Add on Masque
+                  </h3>
+                  <div
+                    class="text-xl font-bold text-primary"
+                    aria-hidden="true"
+                  >
+                    Varies
+                  </div>
+                </header>
+                <p itemprop="description" class="text-gray-500 text-sm">
+                  Choose this to add on to any service! If you want this as a
+                  standalone alone procedure I may reach out to you for extra
+                  booking details.
+                </p>
+              </article>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Category: Waxing & Tinting -->
+        <section
+          id="cat-waxing"
+          aria-labelledby="heading-waxing"
+          class="bg-white p-6 sm:p-10 rounded-xl shadow-2xl transition duration-300 hover:shadow-3xl border-t-4 border-primary"
+        >
+          <h2
+            id="heading-waxing"
+            class="text-3xl sm:text-4xl font-bold mb-2 text-primary"
+          >
+            Waxing &amp; Tinting
+          </h2>
+          <p class="mb-8 uppercase text-[var(--color-dark-blue)]">
+            Brow Services Colorado Springs CO
+          </p>
+
+          <ul
+            class="grid grid-cols-1 md:grid-cols-2 gap-8"
+            role="list"
+            aria-label="Waxing and tinting services"
+          >
+            <li>
+              <article
+                itemscope
+                itemtype="https://schema.org/Service"
+                class="bg-accent p-6 rounded-lg shadow-md hover:shadow-lg transition duration-200"
+              >
+                <header class="flex justify-between items-start mb-2">
+                  <h3
+                    itemprop="name"
+                    class="text-xl font-semibold text-gray-800"
+                  >
+                    Brow Shaping
+                  </h3>
+                  <div
+                    itemprop="offers"
+                    itemscope
+                    itemtype="https://schema.org/Offer"
+                    aria-label="Price"
+                  >
+                    <meta itemprop="priceCurrency" content="USD" />
+                    <span
+                      class="text-xl font-bold text-primary"
+                      itemprop="price"
+                      content="20.00">$20.00</span
+                    >
+                  </div>
+                </header>
+                <p itemprop="description" class="text-gray-500 text-sm">
+                  Waxing for different parts of the face.
+                </p>
+              </article>
+            </li>
+
+            <li>
+              <article
+                itemscope
+                itemtype="https://schema.org/Service"
+                class="bg-accent p-6 rounded-lg shadow-md hover:shadow-lg transition duration-200"
+              >
+                <header class="flex justify-between items-start mb-2">
+                  <h3
+                    itemprop="name"
+                    class="text-xl font-semibold text-gray-800"
+                  >
+                    Lip and Chin Waxing
+                  </h3>
+                  <div
+                    itemprop="offers"
+                    itemscope
+                    itemtype="https://schema.org/Offer"
+                    aria-label="Price"
+                  >
+                    <meta itemprop="priceCurrency" content="USD" />
+                    <span
+                      class="text-xl font-bold text-primary"
+                      itemprop="price"
+                      content="30.00">$30.00</span
+                    >
+                  </div>
+                </header>
+                <p itemprop="description" class="text-gray-500 text-sm">
+                  Combined waxing service for the lip and chin area.
+                </p>
+              </article>
+            </li>
+
+            <li>
+              <article
+                itemscope
+                itemtype="https://schema.org/Service"
+                class="bg-accent p-6 rounded-lg shadow-md hover:shadow-lg transition duration-200"
+              >
+                <header class="flex justify-between items-start mb-2">
+                  <h3
+                    itemprop="name"
+                    class="text-xl font-semibold text-gray-800"
+                  >
+                    Lip Waxing
+                  </h3>
+                  <div
+                    itemprop="offers"
+                    itemscope
+                    itemtype="https://schema.org/Offer"
+                    aria-label="Price"
+                  >
+                    <meta itemprop="priceCurrency" content="USD" />
+                    <span
+                      class="text-xl font-bold text-primary"
+                      itemprop="price"
+                      content="15.00">$15.00</span
+                    >
+                  </div>
+                </header>
+                <p itemprop="description" class="text-gray-500 text-sm">
+                  Waxing for the upper lip area.
+                </p>
+              </article>
+            </li>
+
+            <li>
+              <article
+                itemscope
+                itemtype="https://schema.org/Service"
+                class="bg-accent p-6 rounded-lg shadow-md hover:shadow-lg transition duration-200"
+              >
+                <header class="flex justify-between items-start mb-2">
+                  <h3
+                    itemprop="name"
+                    class="text-xl font-semibold text-gray-800"
+                  >
+                    Chin Waxing
+                  </h3>
+                  <div
+                    itemprop="offers"
+                    itemscope
+                    itemtype="https://schema.org/Offer"
+                    aria-label="Price"
+                  >
+                    <meta itemprop="priceCurrency" content="USD" />
+                    <span
+                      class="text-xl font-bold text-primary"
+                      itemprop="price"
+                      content="15.00">$15.00</span
+                    >
+                  </div>
+                </header>
+                <p itemprop="description" class="text-gray-500 text-sm">
+                  Waxing for the chin area.
+                </p>
+              </article>
+            </li>
+
+            <li>
+              <article
+                itemscope
+                itemtype="https://schema.org/Service"
+                class="bg-accent p-6 rounded-lg shadow-md hover:shadow-lg transition duration-200"
+              >
+                <header class="flex justify-between items-start mb-2">
+                  <h3
+                    itemprop="name"
+                    class="text-xl font-semibold text-gray-800"
+                  >
+                    Eyebrow Tint
+                  </h3>
+                  <div
+                    itemprop="offers"
+                    itemscope
+                    itemtype="https://schema.org/Offer"
+                    aria-label="Price"
+                  >
+                    <meta itemprop="priceCurrency" content="USD" />
+                    <span
+                      class="text-xl font-bold text-primary"
+                      itemprop="price"
+                      content="25.00">$25.00</span
+                    >
+                  </div>
+                </header>
+                <p itemprop="description" class="text-gray-500 text-sm">
+                  Enhance your brow color for a fuller look.
+                </p>
+              </article>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Consultations -->
+        <section
+          id="cat-consult"
+          aria-labelledby="heading-consult"
+          class="bg-white p-6 sm:p-10 rounded-xl shadow-2xl transition duration-300 hover:shadow-3xl border-t-4 border-gray-400"
+        >
+          <h2 id="heading-consult" class="text-3xl sm:text-4xl font-bold mb-8">
+            Consultations
+          </h2>
+
+          <ul
+            class="grid grid-cols-1 md:grid-cols-2 gap-8"
+            role="list"
+            aria-label="Consultation services"
+          >
+            <li>
+              <article
+                itemscope
+                itemtype="https://schema.org/Service"
+                class="bg-accent p-6 rounded-lg shadow-md hover:shadow-lg transition duration-200"
+              >
+                <header class="flex justify-between items-start mb-2">
+                  <h3
+                    itemprop="name"
+                    class="text-xl font-semibold text-gray-800"
+                  >
+                    Free Consultation (15 min)
+                  </h3>
+                  <div
+                    itemprop="offers"
+                    itemscope
+                    itemtype="https://schema.org/Offer"
+                    aria-label="Price"
+                  >
+                    <meta itemprop="priceCurrency" content="USD" />
+                    <span
+                      class="text-xl font-bold text-primary"
+                      itemprop="price"
+                      content="0.00">$0.00</span
+                    >
+                  </div>
+                </header>
+                <p itemprop="description" class="text-gray-500 text-sm">
+                  Consult with stylist about what you are wanting to do, will go
+                  over cost and options and time needed before making actual
+                  appointment. This is a consultation ONLY. About 15 minutes
+                  will be allotted :)
+                </p>
+              </article>
+            </li>
+
+            <li>
+              <article
+                itemscope
+                itemtype="https://schema.org/Service"
+                class="bg-accent p-6 rounded-lg shadow-md hover:shadow-lg transition duration-200"
+              >
+                <header class="flex justify-between items-start mb-2">
+                  <h3
+                    itemprop="name"
+                    class="text-xl font-semibold text-gray-800"
+                  >
+                    DevaCurl Consultation
+                  </h3>
+                  <div
+                    itemprop="offers"
+                    itemscope
+                    itemtype="https://schema.org/Offer"
+                    aria-label="Price"
+                  >
+                    <meta itemprop="priceCurrency" content="USD" />
+                    <span
+                      class="text-xl font-bold text-primary"
+                      itemprop="price"
+                      content="0.00">$0.00</span
+                    >
+                  </div>
+                </header>
+                <p itemprop="description" class="text-gray-500 text-sm">
+                  Free consultation for curly haircut or color. Please book this
+                  before booking a DevaCurl service as all curly hair is
+                  different and each person requires different amounts of time!
+                  CONSULT ONLY.
+                </p>
+              </article>
+            </li>
+          </ul>
+        </section>
+      </div>
+    </div>
+
+    <Footer />
+    <style>
+      /* ...existing code... */
+      .bg-accent {
+        background-color: #f0f9ff; /* Very Light Blue for cards */
+      }
+      /* Style for the Disclaimer Box */
+      .disclaimer-box {
+        background-color: #fffbeb; /* Light yellow/cream background */
+        border-left: 5px solid #d97706; /* Amber border */
+      }
+      /* Style for the Chem Fee Box */
+      .chem-fee-box {
+        background-color: #fee2e2; /* Light red/pink background */
+        color: #991b1b; /* Dark red text */
+        border: 1px solid #f87171; /* Medium red border */
+      }
+    </style>
+  </main>
+</Layout>

@@ -1,0 +1,51 @@
+---
+import AccordionFaq from "@/components/Accordion";
+---
+
+<section id="faq" class="pt-12 md:pt-12 px-4">
+  <div class="faq-container max-w-7xl md:px-4 mx-auto">
+    <h2
+      class="text-[var(--color-dark-blue)] text-4xl text-center mb-4 playfair"
+    >
+      Frequently Asked Questions
+    </h2>
+    <p class="text-[var(--color-dark-blue)] text-center mb-8">
+      Here are some of the most common questions I get asked:
+    </p>
+    <AccordionFaq client:load />
+  </div>
+  <div class="separator mt-16">
+    <!-- top soft wave -->
+
+    <!-- center band with quote -->
+    <div
+      class="bg-gradient-to-r from-[color:var(--color-dark-blue)]/8 via-indigo-50/5 to-[color:var(--color-dark-blue)]/6 py-8 flex justify-center"
+    >
+      <div class="max-w-3xl text-center px-4">
+        <p
+          class="italic playfair text-[var(--color-dark-blue)] text-lg md:text-xl"
+        >
+          “A woman who cuts her hair is about to change her life.”
+        </p>
+        <p class="mt-2 text-sm text-[var(--color-dark-blue)]/60">
+          — Coco Chanel
+        </p>
+
+        <!-- decorative flourish -->
+        <svg
+          class="mx-auto mt-4 w-20 h-4 text-[var(--color-dark-blue)]/40"
+          viewBox="0 0 100 10"
+          fill="none"
+          aria-hidden="true"
+        >
+          <path
+            d="M5 5 C20 0, 35 10, 50 5 C65 0, 80 10, 95 5"
+            stroke="currentColor"
+            stroke-width="0.8"
+            stroke-linecap="round"
+            stroke-linejoin="round"></path>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>

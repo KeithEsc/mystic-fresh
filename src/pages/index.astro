@@ -1,0 +1,37 @@
+---
+import Welcome from "../components/Welcome.astro";
+import Layout from "../layouts/Layout.astro";
+import NavMenu from "@/components/NavMenu";
+import Form from "@/components/Form.tsx";
+import { Star } from "lucide-react";
+import Hero from "@/components/Hero.astro";
+import Services from "@/components/Services.astro";
+import AccordionFaq from "@/components/Accordion";
+import Footer from "../components/Footer.astro";
+import { Phone } from "lucide-react";
+import About from "@/components/About.astro";
+import Reviews from "@/components/Reviews.astro";
+import Faq from "@/components/Faq.astro";
+import Ender from "@/components/Ender.astro";
+import Map from "@/components/Map.astro";
+
+// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
+// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+
+// Removed FAQ from between Reviews and Ender
+// Removed NavMenu from here and added to Layout
+// Removed Map from Footer into its own component and added to the end of main
+---
+
+<Layout />
+
+<Welcome />
+<main class="">
+  <Hero />
+  <Services />
+  <About />
+  <Reviews />
+  <Ender />
+  <Map />
+</main>
+<Footer />

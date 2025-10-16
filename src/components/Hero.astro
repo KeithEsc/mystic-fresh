@@ -1,0 +1,89 @@
+---
+import Form from "@/components/Form.tsx";
+import { Star } from "lucide-react";
+---
+
+<section id="hero" class="bg-[var(--color-dark-blue)] md:py-12">
+  <div
+    class="max-w-7xl mx-auto hero flex items-center justify-center relative md:p-4"
+  >
+    <div class="flex-container flex flex-col md:flex-row gap-4 items-center">
+      <div
+        class="left flex flex-col flex-1 min-w-[300px] py-10 md:py-0 gap-8 px-6 md:px-0"
+      >
+        <h2 class="text-4xl text-[var(--light)] playfair">
+          Reliable Hair Styling in Colorado Springs
+        </h2>
+        <p class="font-regular text-[var(--light)] leading-7">
+          Looking for a dependable hair stylist in Coloado Springs? Mystic Manes
+          is dedicated to making your new look smooth and stress-free. A
+          certified professional with a focus on perfecting your style, Kasey
+          Esclavon offers top-quality salon services designed to meet your
+          unique needs.
+        </p>
+        <ul class="font-medium text-[var(--light)]">
+          <li>
+            <p>&#x2713; Precision Haircuts</p>
+          </li>
+          <li>
+            <p>&#x2713; Balayage</p>
+          </li>
+          <li>
+            <p>&#x2713; Natural Coloring</p>
+          </li>
+        </ul>
+        <div class="reviews flex items-center gap-4">
+          <div class="circles z-10 flex -space-x-1 rtl:space-x-reverse">
+            <img
+              src="/images/review1.png"
+              alt="review1"
+              class="w-12 h-12 rounded-full border-2 border-[var(--light)]"
+            />
+            <img
+              src="/images/review2.png"
+              alt="review2"
+              class="w-12 h-12 rounded-full border-2 border-[var(--light)] -ml-4"
+            />
+            <img
+              src="/images/review3.png"
+              alt="review3"
+              class="w-12 h-12 rounded-full border-2 border-[var(--light)] -ml-4"
+            />
+            <img
+              src="/images/review4.png"
+              alt="review3"
+              class="w-12 h-12 rounded-full border-2 border-[var(--light)] -ml-4"
+            />
+            <img
+              src="/images/review5.png"
+              alt="review3"
+              class="w-12 h-12 rounded-full border-2 border-[var(--light)] -ml-4"
+            />
+          </div>
+          <div class="stars-box">
+            <div class="stars flex space-x-1">
+              <Star className="w-4 h-4 text-yellow-400 fill-yellow-400" />
+              <Star className="w-4 h-4 text-yellow-400 fill-yellow-400" />
+              <Star className="w-4 h-4 text-yellow-400 fill-yellow-400" />
+              <Star className="w-4 h-4 text-yellow-400 fill-yellow-400" />
+              <Star className="w-4 h-4 text-yellow-400 fill-yellow-400" />
+              <span class="text-xs font-semibold text-[var(--light)]"
+                >(5.0)</span
+              >
+            </div>
+            <span class="text-xs font-semibold text-[var(--light)]"
+              >40+ Google Reviews</span
+            >
+          </div>
+        </div>
+      </div>
+      <div class="right flex-1 min-w-[300px]">
+        <div
+          class="form-container bg-[var(--color-lav)] md:max-w-md md:ml-auto md:bg-white px-10 rounded-t-4xl md:rounded-lg"
+        >
+          <Form client:load />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
