@@ -86,7 +86,7 @@ export default function NavBar() {
                 <Menu className="h-6 w-6" />
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="p-6 flex flex-col gap-4 ">
+            <SheetContent side="right" className="p-6 flex flex-col gap-4 bg-[var(--color-lav)] ">
               <a href="/" className="text-lg font-medium">Home</a>
               <a href="/services" className="text-lg font-medium">Services</a>
               <a href="/policies-faq" className="text-lg font-medium">Policies & FAQ</a>

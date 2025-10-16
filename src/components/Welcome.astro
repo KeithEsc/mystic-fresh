@@ -394,7 +394,7 @@
 
   /** @param {HTMLElement} item */
   function centerItem(item) {
-    if (window.innerWidth > 900) return;
+    if (window.innerWidth > 900 || isUserScrolling) return;
     item.scrollIntoView({
       behavior: "smooth",
       block: "nearest",
@@ -416,11 +416,13 @@
   let isDragging = false;
   let startX = 0;
   let scrollLeft = 0;
+  let isUserScrolling = false;
 
   if (galleryContainer) {
     galleryContainer.addEventListener("mousedown", (e) => {
       if (window.innerWidth <= 900) {
         isDragging = true;
+        isUserScrolling = true;
         startX = e.pageX - galleryContainer.offsetLeft;
         scrollLeft = galleryContainer.scrollLeft;
         galleryContainer.style.cursor = "grabbing";
@@ -445,12 +447,21 @@
       galleryContainer.scrollLeft = scrollLeft - walk;
     });
 
+    // Touch events for mobile
+    galleryContainer.addEventListener("touchstart", () => {
+      isUserScrolling = true;
+    });
+
     // scroll detection
     let scrollTimeout = 0;
     galleryContainer.addEventListener("scroll", () => {
       if (window.innerWidth <= 900) {
+        isUserScrolling = true;
         clearTimeout(scrollTimeout);
-        scrollTimeout = window.setTimeout(updateCenterItem, 150);
+        scrollTimeout = window.setTimeout(() => {
+          updateCenterItem();
+          isUserScrolling = false;
+        }, 150);
       }
     });
   }
